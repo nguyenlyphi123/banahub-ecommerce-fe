@@ -1,0 +1,111 @@
+.warranty-receive-header {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.warranty-search {
+  border: 1px solid rgba(0, 0, 0, 0.122);
+  border-radius: 5px;
+  padding: 3px 7px 3px 7px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.warranty-search > input {
+  height: 30px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.warranty-search > .fa-search {
+  color: rgba(0, 0, 0, 0.508);
+  border-left: 1px solid rgba(0, 0, 0, 0.123);
+  padding-left: 5px;
+  font-size: 1.3em;
+}
+
+.warranty-check-list {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wci-info {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.564);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding-bottom: 10px;
+}
+
+.wci-detail {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.108);
+  padding: 1rem 0 1rem 0;
+}
+
+.wci-detail:last-child {
+  border: none;
+}
+
+.wci-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wci-product-info {
+  display: flex;
+}
+
+.wci-product-info > .image {
+  margin-right: 0.5rem;
+}
+
+.wci-product-info > .image > img {
+  width: 80px;
+}
+
+.wci-product-info > .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wci-product-info > .name > p:nth-child(2) {
+  color: rgb(255, 77, 33);
+}
+
+.wci-check {
+  font-size: 0.8em;
+  font-weight: 500;
+  border: 1px solid rgb(255, 77, 33);
+  color: rgb(255, 77, 33);
+  padding: 0 0.5rem 0 0.5rem;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 5px;
+}
+
+.wci-button {
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid rgb(255, 77, 33);
+  color: rgb(255, 77, 33);
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.wci-button:hover {
+  background-color: rgb(255, 77, 33);
+  color: #fff;
+}

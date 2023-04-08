@@ -1,0 +1,86 @@
+.promotion-box {
+  padding: 0.65rem 0 0.65rem 0;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  background-color: rgb(255, 199, 54);
+  /* overflow: hidden; */
+}
+
+.choosed {
+  background-color: #50b768;
+}
+
+.choosed .promotion-content {
+  color: #ffffff;
+}
+
+.promotion-box:hover {
+  transform: scale(1.05);
+}
+
+.promotion-content {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+/* .promotion-box:hover .promotion-content {
+  color: rgba(179, 140, 40, 1);
+} */
+
+.promotion-box-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+.promotion-box-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+  transform: translate(50%, -50%);
+}
+
+.promotion-box-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+  transform: translate(-50%, 50%);
+}
+
+.promotion-box-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+  transform: translate(50%, 50%);
+}
+
+.cart-null-alert {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.482);
+}

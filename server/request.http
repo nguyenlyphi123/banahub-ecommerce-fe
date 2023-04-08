@@ -1,0 +1,426 @@
+### Account
+###
+POST http://localhost:6001/api/account/register
+Content-Type: application/json
+
+{
+    "name": "Nguyễn Lý Phi",
+    "username": "nguyenlyphi",
+    "password": "nguyenlyphi",
+    "level": 1
+}
+
+###
+POST http://localhost:6001/api/account/register
+Content-Type: application/json
+
+{
+    "name": "Nguyễn Lý Phi",
+    "username": "admin",
+    "password": "nguyenlyphi",
+    "level": 2
+}
+
+###
+POST http://localhost:6001/api/account/employee/register
+Content-Type: application/json
+
+{
+    "name": "Nguyễn Minh Chánh",
+    "username": "nguyenminhchanh",
+    "password": "nguyenminhchanh",
+    "level": 1,
+    "position": "63f369973a834a9a46d2e05d"
+}
+
+###
+POST http://localhost:6001/api/account/login
+Content-Type: application/json
+
+{
+    "username": "tranthingocanh@gmail.com",
+    "password": "tranthingocanh"
+}
+
+###
+POST http://localhost:6001/api/account/employee/login
+Content-Type: application/json
+
+{
+    "username": "nguyenlyphi",
+    "password": "nguyenlyphi"
+}
+
+###
+POST http://localhost:6001/api/account/admin/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "nguyenlyphi"
+}
+
+### Product
+###
+POST http://localhost:6001/api/product/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzYxMTcyMjB9.ZHrZaAbD-T--E3SpqY1zFpsusoGTrqKdXE2m8ZWNcgY
+
+{
+    "name": "CPU AMD Ryzen 5 3500 (6C/6T, 3.6 GHz up to 4.1 GHz, 16MB) - AM45",
+    "describe": "- Socket: AM4, AMD Ryzen thế hệ thứ 3\n- Tốc độ: 3.6 GHz up to 4.1 GHz (6nhân, 6 luồng)\n- Bộ nhớ đệm: 16MB",
+    "quantity": 100,
+    "price": 3890000,
+    "type": "63e64c7b288a0a38fc1d3e7a",
+    "sub_type": "63e64eb367862e3bb29d67ed",
+    "brand": "63e78a6c79e9757c8ed986e7",
+    "image": "https://firebasestorage.googleapis.com/v0/b/banahub.appspot.com/o/images%2Fpc-cpu1.webp?alt=media&token=c2e3b281-7ee0-4874-b791-c7055501edd0"
+}
+
+###
+PUT http://localhost:6001/api/product/640b91e55cb0be2ca6ccb451
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzYxMTMxMzR9.ZcfJ1TjhLEQjo-Fha-ApobWE7ksVyXzfdJau65kikfU
+
+{
+    "name": "CPU AMD Ryzen 5 3500 (6C/6T, 3.6 GHz up to 4.1 GHz, 16MB) - AM4",
+    "describe": "- Socket: AM4, AMD Ryzen thế hệ thứ 3\n- Tốc độ: 3.6 GHz up to 4.1 GHz (6nhân, 6 luồng)\n- Bộ nhớ đệm: 16MB",
+    "quantity": 100,
+    "price": 3890000,
+    "type": "63e64c6c288a0a38fc1d3e77",
+    "brand": "63df813aa7c3537f7035ae7b",
+    "image": "63de9f9ea53a6dc786b33953"
+}
+
+###
+POST http://localhost:6001/api/product/import
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTc3OTdjZmIwNGMwNGZhZTg4NjYyYyIsImxldmVsIjoxLCJwb3NpdGlvbiI6IjYzZjM2OGM3NTBlMWQyMjFmNTQwZmQ5NyIsImlhdCI6MTY3ODQ3NzM4OX0.KPTxS-yvCOGKksgf5O_fKDYKQUqGfm5I7gZUJpi2EUc
+
+{
+    "importData": [
+        {
+            "product": {
+                "_id":"63e7a0d3c60a350343135656"
+            },
+            "quantity": 1
+        },
+        {
+            "product": {
+                "_id":"63e7a22fc60a35034313565a"
+            },
+            "quantity": 1
+        }
+    ]
+}
+
+###
+DELETE  http://localhost:6001/api/product/63df82744daffb341465d1ba
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+###
+GET http://localhost:6001/api/product
+
+###
+GET http://localhost:6001/api/product/63e8ecb2218a1858f410e191
+
+###
+GET http://localhost:6001/api/product/type/63e64c7b288a0a38fc1d3e7a
+
+###
+PUT http://localhost:6001/api/product/view/63e64c7b288a0a38fc1d3e7a
+
+### Type
+###
+POST http://localhost:6001/api/type/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+{
+    "name": "Tablet"
+}
+
+###
+PUT http://localhost:6001/api/type/63e64c1d288a0a38fc1d3e74
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzYxMTMxMzR9.ZcfJ1TjhLEQjo-Fha-ApobWE7ksVyXzfdJau65kikfU
+
+{
+    "name": "Laptop",
+    "icon_link": "https://firebasestorage.googleapis.com/v0/b/salemanager-11c9a.appspot.com/o/images%2Flaptop-icon.png?alt=media&token=2e3a07b0-c3fe-4ed1-af30-8f4af09a36e3"
+}
+
+###
+DELETE  http://localhost:6001/api/type/63dfd76d688549d17ade782d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+###
+GET http://localhost:6001/api/type
+
+###
+GET http://localhost:6001/api/type/63df7f0411f5799493c46f52
+
+### Lower-Type
+###
+POST http://localhost:6001/api/ltype/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+{
+    "h_type_id": "63e64d08288a0a38fc1d3e83",
+    "name": "Bộ chuyển đổi"
+}
+
+###
+PUT http://localhost:6001/api/ltype/63dfd76d688549d17ade782d
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+{
+    "name": "Tablet"
+}
+
+###
+DELETE  http://localhost:6001/api/ltype/63dfd76d688549d17ade782d
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+###
+GET http://localhost:6001/api/ltype
+
+###
+GET http://localhost:6001/api/ltype/sub/63e64c7b288a0a38fc1d3e7a
+
+###
+GET http://localhost:6001/api/ltype/63df7f0411f5799493c46f52
+
+### Brand
+###
+POST http://localhost:6001/api/brand/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzYxMTc3MjB9.n_2yYklM4CRoJa81OHCqws2Pz0tzKVMueIaRONgFkUs
+
+{
+    "name": "SAMSUNG",
+    "type": "63e64c6c288a0a38fc1d3e77"
+}
+
+###
+PUT http://localhost:6001/api/brand/update/63e78a6c79e9757c8ed986e7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzYxMTc3MjB9.n_2yYklM4CRoJa81OHCqws2Pz0tzKVMueIaRONgFkUs
+
+{
+    "name": "Intel",
+    "type": "63e64c7b288a0a38fc1d3e7a",
+    "sub_type": "63e64eb367862e3bb29d67ed"
+}
+
+###
+DELETE  http://localhost:6001/api/brand/63e119716b8c34b44617743a
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+###
+GET http://localhost:6001/api/brand
+
+###
+GET http://localhost:6001/api/brand/63df813aa7c3537f7035ae7b
+
+###
+GET http://localhost:6001/api/brand/type/63e64c7b288a0a38fc1d3e7a
+
+###
+GET http://localhost:6001/api/brand/63e64c7b288a0a38fc1d3e7a/63e64ef167862e3bb29d67f0
+
+### Bill
+###
+POST http://localhost:6001/api/bill/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5ZjllYTUzYTZkYzc4NmIzMzk1MyIsImxldmVsIjowLCJpYXQiOjE2NzU2OTkzNzB9.dBZQSqtuXfLmG-J_gqwgCzlpYBcoWyE6l7jEDDHrADw
+
+{
+    "customer": "63de9f9ea53a6dc786b33953",
+    "cart_list": [
+        {
+            "product": "63df82744daffb341465d1ba",
+            "quantity": 1
+        }
+    ],
+    "discount": 0,
+    "total_cost": 25990000,
+    "payment_methods": "COD"
+}
+
+###
+PUT http://localhost:6001/api/bill/MV21WCC
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+{
+    "customer": "63de9f9ea53a6dc786b33953",
+    "cart_list": [
+        {
+            "product": "63e12b6cb2102c1ce86f9be5",
+            "quantity": 1
+        }
+    ],
+    "discount": 0,
+    "total_cost": 25990000,
+    "payment_methods": "COD",
+    "status": "Delivering"
+}
+
+###
+DELETE  http://localhost:6001/api/bill/63df82744daffb341465d1ba
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+###
+GET http://localhost:6001/api/bill
+
+###
+GET http://localhost:6001/api/bill/MV21WCC
+
+### Rating
+###
+POST http://localhost:6001/api/rating/create
+Content-Type: application/json
+
+{
+    "author": {
+        "name": "Nguyễn lý Phi",
+        "email": "nguyenlyphi@gmail.com"
+    },
+    "content": "Sản phẩm quá chất lượng",
+    "rating": 5,
+    "product_id": "63e7a0d3c60a350343135656"
+}
+
+###
+DELETE  http://localhost:6001/api/bill/63df82744daffb341465d1ba
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoxLCJpYXQiOjE2NzU2MTE0NTl9.VuOOSJlHhGs0lZq5ZbExwA1uSmUF86-2cckQprVBkQU
+
+###
+GET http://localhost:6001/api/bill
+
+###
+GET http://localhost:6001/api/bill/MV21WCC
+
+### PromotionObject
+###
+POST http://localhost:6001/api/promotionObj/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzY1MzUyNTB9.q3xInYjD2yo-XKG5-5rt7JVnxJJ7YTDAcHlcnIqf_8s
+
+{
+    "name": "Khách hàng đặc biệt"
+}
+
+### Promotion
+###
+POST http://localhost:6001/api/promotion/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzY1MzUyNTB9.q3xInYjD2yo-XKG5-5rt7JVnxJJ7YTDAcHlcnIqf_8s
+
+{
+    "name": "Test",
+    "promotion_percent": 10,
+    "start": "2023-02-16T08:15:10.716+00:00",
+    "end": "2023-12-16T08:15:10.716+00:00",
+    "rank": 1,
+    "quantity": 100
+}
+
+###
+GET http://localhost:6001/api/promotion
+
+###
+GET http://localhost:6001/api/promotion/rank/1/63f1e9521a3c91f4496f4be9
+
+### CustomerRank
+###
+POST http://localhost:6001/api/customer_rank/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzY1MzUyNTB9.q3xInYjD2yo-XKG5-5rt7JVnxJJ7YTDAcHlcnIqf_8s
+
+{
+    "name": "Khách hàng đặc biệt",
+    "rank": 3
+}
+
+### Position
+###
+POST http://localhost:6001/api/position/create 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzY1MzUyNTB9.q3xInYjD2yo-XKG5-5rt7JVnxJJ7YTDAcHlcnIqf_8s
+
+{
+    "name": "Bộ phận chăm sóc khách hàng"
+}
+
+### Employee
+### 
+POST http://localhost:6001/api/employee/create 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZGU5YzBjZTZlNGMxM2UxYjc4NzA3NSIsImxldmVsIjoyLCJpYXQiOjE2NzY1MzUyNTB9.q3xInYjD2yo-XKG5-5rt7JVnxJJ7YTDAcHlcnIqf_8s
+
+{
+    "employee_id": "63e7797cfb04c04fae88662c",
+    "name": "Nguyễn Lý Phi",
+    "email": "nguyenlyphi@gmail.com",
+    "address": "324/54 Lê Hồng Phong, Phú Hòa, Thủ Dầu Một",
+    "phone_number": "0965795484",
+    "position": "63f368c750e1d221f540fd97"
+}
+
+###
+PUT http://localhost:6001/api/employee/update/63e7797cfb04c04fae88662c
+Content-Type: application/json
+
+{
+    "name": "Nguyễn Lý Phis",
+    "email": "nguyenlyphi@gmail.com",
+    "address": "324/54 Lê Hồng Phong, Phú Hòa, Thủ Dầu Một",
+    "phone_number": "0965795484"
+}
+
+### Working Schedule
+### 
+POST http://localhost:6001/api/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTc3OTdjZmIwNGMwNGZhZTg4NjYyYyIsImxldmVsIjoxLCJwb3NpdGlvbiI6IjYzZjM2OGM3NTBlMWQyMjFmNTQwZmQ5NyIsImlhdCI6MTY3NjkwNDQ1MX0.DcyLoosdJhjWawbKsLwBjMcW8OZelDhFC6Uq33k3ffs
+
+{
+    "date": "2023-02-12T11:18:20.376+00:00",
+    "positions": [
+        {
+            "position": "63f3695f3a834a9a46d2e057",
+            "employees": [
+                {
+                    "employee": "63f372f1f0fba98cf262de00"
+                },
+                {
+                    "employee": "63f373b6c35906342839167e"
+                },
+                {
+                    "employee": "63f37d92c359063428391683"
+                }
+            ]
+        },
+        {
+            "position": "63f3696f3a834a9a46d2e059",
+            "employees": [
+                {
+                    "employee": "63f37dbec359063428391688"
+                },
+                {
+                    "employee": "63f37dd9c35906342839168d"
+                },
+                {
+                    "employee": "63f37e06c359063428391692"
+                }
+            ]
+        }
+    ]
+}
+
+###
+GET http://localhost:6001/api/working-schedule

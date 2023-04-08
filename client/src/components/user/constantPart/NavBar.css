@@ -1,0 +1,29 @@
+.sticky {
+  padding: 0.5rem 0;
+  position: sticky !important;
+  background-color: #fff;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-drop {
+  cursor: pointer;
+}
+
+.nav-menu-drop {
+  width: 190px;
+  position: absolute;
+  left: 0;
+  transform: translate(-35%, -10%);
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.menu-drop:hover .nav-menu-drop {
+  transform: translate(-35%, 0%);
+  opacity: 1;
+  visibility: inherit;
+}

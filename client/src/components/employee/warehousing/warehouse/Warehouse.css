@@ -1,0 +1,25 @@
+.warehouse-container {
+  padding: 1rem;
+}
+
+.warehouse-search {
+  border: 1px solid rgba(0, 0, 0, 0.221);
+  border-radius: 5px;
+  width: fit-content;
+  padding: 5px 1rem 5px 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.warehouse-input {
+  min-width: 350px;
+  border: none;
+  outline: none;
+}
+
+.warehouse-search > .fa-search {
+  border-left: 1px solid rgba(0, 0, 0, 0.23);
+  padding-left: 10px;
+  font-size: 1.6em;
+  color: rgba(0, 0, 0, 0.41);
+}

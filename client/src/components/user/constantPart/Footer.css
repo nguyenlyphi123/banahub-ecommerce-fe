@@ -1,0 +1,17 @@
+.footer-brand {
+  color: #fff;
+  font-size: 2em;
+  padding-bottom: 1rem;
+}
+
+.footer-content {
+  color: rgb(223, 223, 223);
+  padding-bottom: 0.5rem;
+  transition: 0.3s;
+}
+
+.footer-content:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateX(10px);
+}

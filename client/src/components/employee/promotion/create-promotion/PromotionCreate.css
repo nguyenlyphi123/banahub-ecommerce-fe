@@ -1,0 +1,99 @@
+.promotion-new-container {
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.prn-header {
+  text-align: center;
+  padding: 1rem;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.prn-detail-container {
+  width: 70%;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.pnd-label {
+  width: 200px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: end;
+  margin-right: 1.5rem;
+}
+
+.pnd-input-container {
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.312);
+  padding-left: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.pnd-input-container input {
+  width: 100%;
+  outline: none;
+  border: none;
+}
+
+.pnd-type,
+.pnd-name,
+.pnd-date,
+.pnd-discount,
+.pnd-quantity {
+  margin-top: 1rem;
+}
+
+.pnd-date .pnd-input-container {
+  width: 50%;
+}
+
+.pnd-dropdown-button {
+  width: 200px;
+  background-color: #343a40;
+  color: #fff;
+}
+
+.pnd-dropdown-button:hover {
+  color: #fff;
+}
+
+.pnd-dropdown-menu {
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  width: 200px;
+}
+
+.pnd-submit-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.pnd-button {
+  width: 200px;
+  background-color: rgb(243, 77, 35);
+  color: #fff;
+}
+
+.pnd-button:hover {
+  color: #fff;
+  background-color: rgb(255, 77, 33);
+}
+
+.pnd-cancel {
+  width: 100px;
+  background-color: #343a40;
+  color: #fff;
+}
+
+.pnd-cancel:hover {
+  color: #fff;
+  background-color: #23272b;
+}

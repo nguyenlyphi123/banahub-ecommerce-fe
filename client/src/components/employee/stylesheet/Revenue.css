@@ -1,0 +1,55 @@
+.dashboard-container {
+  height: calc(100vh - 85px);
+  overflow-y: scroll;
+}
+
+.dashboard-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.dashboard-container::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.dashboard-container::-webkit-scrollbar-thumb {
+  background: #515151;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.dashboard-container::-webkit-scrollbar-thumb:hover {
+  background: #424242;
+}
+
+.db-revenue,
+.db-market,
+.db-daily-sales,
+.db-summary,
+.db-total-order,
+.db-monthly-invoices,
+.db-top-selling-product {
+  height: 450px;
+}
+
+.revenue,
+.market-value,
+.daily-sales,
+.summary,
+.total-order,
+.monthly-invoices,
+.top-selling-product {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.borderless td,
+.borderless th {
+  padding: 10px;
+  border: none !important;
+}

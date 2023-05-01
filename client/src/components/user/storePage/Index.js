@@ -40,15 +40,6 @@ export default function StorePage() {
             <div className='row' style={{ overflow: 'hidden' }}>
               <ScrollToTop />
 
-              {/* <StoreProduct
-                typeId={typeId}
-                handleChangeTypeId={handleChangeTypeId}
-                ltypeId={ltypeId}
-                handleChangeLTypeId={handleChangeLTypeId}
-                brandId={brandId}
-                handleChangeBrandId={handleChangeBrandId}
-              /> */}
-
               <Outlet
                 context={{
                   typeId: typeId._id,

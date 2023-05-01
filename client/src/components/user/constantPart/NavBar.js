@@ -6,6 +6,7 @@ import { cartSelector } from '../../../redux/reducers/cartSlice';
 import { setType } from '../../../redux/reducers/typeSlice';
 
 import './NavBar.css';
+import { apiURL } from '../../../contexts/constants';
 
 export default function Navbar() {
   const cartItems = useSelector(cartSelector);
@@ -15,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:6001/api/type')
+      .get(`${apiURL}/type`)
       .then((res) => {
         setTypeList(res.data.types);
       })

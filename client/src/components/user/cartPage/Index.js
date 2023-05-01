@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 import {
   cartSelector,
@@ -7,11 +6,10 @@ import {
   updateQuantity,
 } from '../../../redux/reducers/cartSlice';
 import { typeSelector } from '../../../redux/reducers/typeSlice';
-
 import { AuthContext } from '../../../contexts/AuthContext';
-
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { apiURL } from '../../../contexts/constants';
 
 import('./Cart.css');
 
@@ -23,6 +21,12 @@ export default function CartPage() {
 
   // redux
   const cartItems = useSelector(cartSelector);
+
+  // check cart null
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (cartItems.length <= 0) navigate('/store');
+  }, []);
 
   // het typeId
   const typeId = useSelector(typeSelector);
@@ -43,14 +47,13 @@ export default function CartPage() {
   const [promotionChoosed, setPromotionChoosed] = useState(0);
   const [promotion, setPromotion] = useState([]);
   useEffect(() => {
-    axios
-      .get(
-        `http://localhost:6001/api/promotion/rank/${customer.info.rank}/${customer.info._id}`,
-      )
-      .then((res) => setPromotion(res.data.promotion))
-      .catch((err) => console.log(err));
-
-    console.log(customer._id);
+    if (customer)
+      axios
+        .get(
+          `${apiURL}/promotion/rank/${customer.info.rank}/${customer.info._id}`,
+        )
+        .then((res) => setPromotion(res.data.promotion))
+        .catch((err) => console.log(err));
   }, []);
 
   const formatter = new Intl.NumberFormat('en');

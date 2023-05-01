@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setType } from '../../../../redux/reducers/typeSlice';
+import { apiURL } from '../../../../contexts/constants';
 
 export default function StoreMenu({
   handleChangeLTypeId,
@@ -20,7 +21,7 @@ export default function StoreMenu({
 
   useEffect(() => {
     axios
-      .get('http://localhost:6001/api/type')
+      .get(`${apiURL}/type`)
       .then((res) => {
         setTypeList(res.data.types);
       })

@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 import Moment from 'react-moment';
+import { apiURL } from '../../../../contexts/constants';
 import './ProductComment.css';
 
 const colors = {
@@ -9,8 +10,11 @@ const colors = {
   grey: '#a9a9a9',
 };
 
-export default function ProductComment({ product_id }) {
-  const [comment, setComment] = useState([]);
+export default function ProductComment({
+  comment,
+  handleCommentSuccess,
+  product_id,
+}) {
   const [commentData, setCommentData] = useState({
     author: {
       name: '',
@@ -22,13 +26,13 @@ export default function ProductComment({ product_id }) {
   });
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
-  const [isClick, setIsClick] = useState(false);
+  // const [isClick, setIsClick] = useState(false);
 
-  useEffect(() => {
-    axios.get(`http://localhost:6001/api/rating/${product_id}`).then((res) => {
-      setComment(res.data.ratings);
-    });
-  }, [isClick]);
+  // useEffect(() => {
+  //   axios.get(`http://localhost:6001/api/rating/${product_id}`).then((res) => {
+  //     setComment(res.data.ratings);
+  //   });
+  // }, [isClick]);
 
   const handleClick = (value) => {
     setCurrentValue(value);
@@ -47,11 +51,10 @@ export default function ProductComment({ product_id }) {
 
   const addComment = async () => {
     try {
-      const response = await axios.post(
-        'http://localhost:6001/api/rating/create',
-        { commentData },
-      );
-      if (response) console.log(response);
+      const response = await axios.post(`${apiURL}/rating/create`, {
+        commentData,
+      });
+      if (response.success) handleCommentSuccess();
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +63,6 @@ export default function ProductComment({ product_id }) {
 
   const handleAddComment = () => {
     addComment();
-    setIsClick(!isClick);
   };
 
   return (
@@ -69,10 +71,9 @@ export default function ProductComment({ product_id }) {
         <div className='your-rating d-flex flex-row'>
           <p>Chọn đánh giá của bạn</p>
           <div className='stars ml-3' onmouseout='CRateSelected()'>
-            {stars.map((index, key) => {
+            {stars.map((_, index) => {
               return (
                 <FaStar
-                  key={key}
                   onClick={() => handleClick(index + 1)}
                   style={{ marginLeft: '3px' }}
                   color={
@@ -149,7 +150,7 @@ export default function ProductComment({ product_id }) {
         {comment.map((item, index) => {
           return (
             <>
-              <div key={index} className='media border comment-box p-3 mb-3'>
+              <div key={item._id} className='media border comment-box p-3 mb-3'>
                 <img
                   src='/assets/userac.png'
                   alt=''
@@ -172,7 +173,7 @@ export default function ProductComment({ product_id }) {
                     }
 
                     for (let i = item.rating; i < 5; i++) {
-                      tmp.push(<FaStar key={i} color={colors.grey} />);
+                      tmp.push(<FaStar key={i + 1} color={colors.grey} />);
                     }
 
                     return tmp;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { apiURL } from '../../../../contexts/constants';
 
 export default function StoreRecommend({ typeId }) {
   const [reconmmend, setRecommend] = useState([]);
@@ -8,13 +9,13 @@ export default function StoreRecommend({ typeId }) {
 
   useEffect(() => {
     if (!typeId) {
-      axios.get(`http://localhost:6001/api/product`).then((res) => {
+      axios.get(`${apiURL}/product`).then((res) => {
         setIsNotExist(false);
         setRecommend(res.data.products);
       });
     } else
       axios
-        .get(`http://localhost:6001/api/product/type/${typeId}`)
+        .get(`${apiURL}/product/type/${typeId}`)
         .then((res) => {
           setIsNotExist(false);
           setRecommend(res.data.product);

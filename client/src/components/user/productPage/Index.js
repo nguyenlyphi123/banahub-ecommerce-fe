@@ -4,7 +4,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../../redux/reducers/cartSlice';
 
+import { FaStar } from 'react-icons/fa';
 import ProductComment from './comment/ProductComment';
+import { apiURL } from '../../../contexts/constants';
+
+const colors = {
+  yellow: '#ffc107',
+  grey: '#a9a9a9',
+};
 
 export default function ProductPage() {
   // redux
@@ -22,7 +29,7 @@ export default function ProductPage() {
 
   useEffect(() => {
     axios
-      .put(`http://localhost:6001/api/product/view/${product._id}`)
+      .put(`${apiURL}/product/view/${product._id}`)
       .then((res) => {
         console.log(res.data.product);
       })
@@ -30,6 +37,28 @@ export default function ProductPage() {
     // console.log(product.quantity);
     // initFacebookSDK();
   }, [product]);
+
+  // get comments
+  const [starAverage, setStarAverage] = useState(0);
+  const [comment, setComment] = useState([]);
+  const [commentTrigger, setCommentTrigger] = useState(false);
+
+  useEffect(() => {
+    axios.get(`${apiURL}/rating/${product._id}`).then((res) => {
+      setComment(res.data.ratings);
+
+      let startTmp = 0;
+      res.data.ratings.forEach((e) => {
+        startTmp += e.rating;
+      });
+
+      setStarAverage(startTmp / res.data.ratings.length);
+    });
+  }, [commentTrigger]);
+
+  const handleCommentSuccess = () => {
+    setCommentTrigger(!commentTrigger);
+  };
 
   const OutOfProduct = () => {
     return (
@@ -163,21 +192,18 @@ export default function ProductPage() {
                 </li>
                 <li className='list-group-item list-border'>
                   Đánh giá:{' '}
-                  {/* {(() => {
-                          let tmp = [];
-                          for (let i = 1; i <= item.Average; i++) {
-                            tmp.push(
-                              <i className='fas fa-star text-warning'></i>,
-                            );
-                          }
+                  {(() => {
+                    let tmp = [];
+                    for (let i = 1; i <= starAverage; i++) {
+                      tmp.push(<FaStar key={i} color={colors.yellow} />);
+                    }
 
-                          for (let i = item.Average; i < 5; i++) {
-                            tmp.push(<i className='far fa-star'></i>);
-                          }
+                    for (let i = starAverage; i < 5; i++) {
+                      tmp.push(<FaStar key={i + 1} color={colors.grey} />);
+                    }
 
-                          console.log(productDetailList);
-                          return tmp;
-                        })()} */}
+                    return tmp;
+                  })()}
                 </li>
                 <li
                   className='list-group-item list-border'
@@ -248,7 +274,11 @@ export default function ProductPage() {
                 <hr />
               </div>
 
-              <ProductComment product_id={product._id} />
+              <ProductComment
+                comment={comment}
+                handleCommentSuccess={handleCommentSuccess}
+                product_id={product._id}
+              />
             </div>
             {/* <FacebookComment /> */}
           </div>

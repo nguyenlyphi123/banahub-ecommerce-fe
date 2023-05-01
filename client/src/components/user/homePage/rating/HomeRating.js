@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -41,7 +40,7 @@ export default function HomeRating() {
                 }}
               >
                 <img
-                  src='/assets/user5.png'
+                  src='https://firebasestorage.googleapis.com/v0/b/banahub.appspot.com/o/images%2Fuser5.png?alt=media&token=82d75b98-a475-489f-a07f-63f3a5559a55'
                   alt=''
                   className='card-img-top'
                   style={{ width: '100px', height: '100px' }}
@@ -80,7 +79,7 @@ export default function HomeRating() {
                 }}
               >
                 <img
-                  src='/assets/user4.png'
+                  src='https://firebasestorage.googleapis.com/v0/b/banahub.appspot.com/o/images%2Fuser5.png?alt=media&token=82d75b98-a475-489f-a07f-63f3a5559a55'
                   alt=''
                   className='card-img-top'
                   style={{ width: '100px', height: '100px' }}
@@ -119,7 +118,7 @@ export default function HomeRating() {
                 }}
               >
                 <img
-                  src='/assets/user2.png'
+                  src='https://firebasestorage.googleapis.com/v0/b/banahub.appspot.com/o/images%2Fuser5.png?alt=media&token=82d75b98-a475-489f-a07f-63f3a5559a55'
                   alt=''
                   className='card-img-top'
                   style={{ width: '100px', height: '100px' }}

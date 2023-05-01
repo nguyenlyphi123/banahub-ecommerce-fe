@@ -79,7 +79,7 @@ export default function Employee() {
                     <div className='avatar'>
                       <img
                         className='mx-auto d-block'
-                        src='https://storage.cloud.google.com/banahub.appspot.com/images/Screenshot%202022-09-03%20230556.png'
+                        src='https://firebasestorage.googleapis.com/v0/b/banahub.appspot.com/o/images%2Fuser.png?alt=media&token=3f002655-c97b-4022-b601-b24c6e5b901b'
                         alt=''
                       />
                     </div>

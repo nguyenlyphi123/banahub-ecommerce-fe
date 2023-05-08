@@ -1,0 +1,108 @@
+.card-container {
+  /* border: 1px solid rgb(143, 143, 143); */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card .soldout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(68, 73, 65, 0.3);
+  position: absolute;
+  width: 100%;
+  height: 310px;
+  transform: translateY(-310px);
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.card .soldout p {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+
+.card:hover .soldout {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.product-card {
+  max-width: 216px;
+  height: 350px;
+  border: 0.5px solid black;
+}
+
+.card-sold {
+  color: rgb(202, 18, 18);
+  font-size: 0.75em;
+}
+
+.search-text {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(190, 147, 41);
+}
+
+.dropdown-transition {
+  transition: 0.2s;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown .show .dropdown-transition {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.not-exist {
+  font-size: 2em;
+  color: rgb(110, 110, 110);
+  font-weight: 500;
+}
+
+.filter-container {
+  padding-top: 7px;
+  /* min-height: 50px; */
+  width: 100%;
+}
+
+.brand-container {
+  width: inherit;
+  margin-right: 1rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  column-gap: 10px;
+}
+
+.brand-box {
+  text-align: center;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: 0.5s;
+}
+
+.brand-box:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(190, 147, 41, 0.5) 0px 1px 4px;
+}
+
+.brand-context {
+  font-size: 0.75em;
+  font-weight: 500;
+  color: rgb(110, 110, 110);
+  margin: 0;
+}

@@ -1,0 +1,101 @@
+.bill-detail-container {
+  position: relative;
+  width: 100%;
+}
+
+.bill-sub-container {
+  border-radius: 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  background-color: #fffefe;
+  width: 100%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.bill-content {
+  width: 100%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bill-content .logo {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 1rem;
+  letter-spacing: 5px;
+}
+
+.bill-content .bill-header {
+  width: 100%;
+  height: 30px;
+  background-color: #343a40;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.bill-header .bill-context {
+  font-size: 1.3em;
+  width: 150px;
+  height: 35px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-right: 4rem;
+  background-color: #fffefe;
+}
+
+.bill-section {
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.bill-section .bill-table .table td,
+.bill-section .bill-table .table th {
+  padding: 5px;
+}
+
+.bill-section .bill-table {
+  height: 180px;
+  overflow-y: scroll;
+}
+
+.bill-table::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.bill-table::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.bill-table::-webkit-scrollbar-thumb {
+  background: #515151;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.bill-table::-webkit-scrollbar-thumb:hover {
+  background: #424242;
+}
+
+.bill-payment-info .payment-info .payment {
+  width: 250px;
+}
+
+.bill-payment-info .payment-info .payment .w-40 {
+  width: 40%;
+}
+
+.bill-payment-info .latter-cost {
+  width: 280px;
+  padding-right: 2.4rem;
+}

@@ -1,0 +1,20 @@
+.comment-box {
+  border-radius: 10px;
+  background-color: rgb(252, 252, 252);
+  border: none !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.comment-input-box {
+  border-radius: 8px;
+  background-color: rgb(250, 250, 250);
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.rating {
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  border: none !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

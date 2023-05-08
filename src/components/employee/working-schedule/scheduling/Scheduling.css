@@ -1,0 +1,125 @@
+.new-employee {
+  width: 100%;
+}
+
+.new-employee .ne-wrapper {
+  width: 100%;
+  border: 1px dashed rgba(32, 193, 32, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 5px;
+  color: rgba(32, 193, 32, 0.6);
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 100;
+  transition: 0.3s;
+}
+
+.new-employee .ne-wrapper:hover {
+  border: 1px dotted rgba(43, 176, 43, 0.8);
+  color: rgba(43, 176, 43, 0.8);
+}
+
+.date-input-container {
+  border: 1px solid rgba(85, 85, 85, 0.352);
+  padding: 2px 5px 2px 5px;
+  margin-left: 0.75rem;
+  border-radius: 5px;
+}
+
+.date-input-container .date-input {
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  color: rgba(85, 85, 85, 0.807);
+}
+
+.popup-container {
+  background-color: rgb(255, 255, 255);
+  height: 450px;
+  width: 750px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.popup-header {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: 1.5rem;
+}
+
+.popup-employee-container {
+  padding: 0 3rem 1rem 3rem;
+}
+
+.popup-employee {
+  background-color: rgba(32, 193, 32, 0.6);
+  padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+  margin: 4px 0 4px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.popup-employee:hover {
+  transform: scale(1.02);
+}
+
+.exit-popup {
+  background-color: rgb(227, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1em;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-save,
+.btn-cancel {
+  background-color: rgba(255, 77, 33, 0.811);
+  text-align: center;
+  padding: 5px 2rem 5px 2rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancel {
+  background-color: rgba(0, 0, 0, 0.744);
+  margin-right: 0.5rem;
+}
+
+.btn-save:hover {
+  background-color: rgba(255, 77, 33, 1);
+}
+
+.exit-popup:hover {
+  background-color: rgb(192, 0, 0);
+}
+
+.schedule-box {
+  width: 130px;
+  cursor: pointer;
+  transition: 0.3s;
+}

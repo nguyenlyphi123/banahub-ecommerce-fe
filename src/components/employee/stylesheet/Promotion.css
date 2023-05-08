@@ -1,0 +1,146 @@
+.emp-promotion-container {
+  padding: 0.5rem 1rem 0rem 1rem;
+  min-height: 80vh;
+}
+
+.emp-promotion-header {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.emp-promotion-nav-container {
+  padding: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.115);
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.emp-promotion-nav-item {
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  padding: 0.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.053);
+  cursor: pointer;
+}
+
+.emp-promotion-nav-item:hover {
+  text-decoration: none;
+  box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+}
+
+.emp-promotion-nav-item:nth-last-child(1) {
+  border-right: 0;
+}
+
+.emp-promotion-nav-item:hover {
+  text-decoration: none;
+}
+
+.emp-promotion-list {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.emp-promotion-item {
+  color: rgba(0, 0, 0, 0.625);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  max-width: 600px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+}
+
+.emp-promotion-item:hover {
+  color: rgba(0, 0, 0, 0.625);
+  text-decoration: none;
+  transform: scale(1.01);
+}
+
+.emp-promotion-content {
+  color: rgba(0, 0, 0, 0.715);
+}
+
+.emp-promotion-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgb(255, 77, 33);
+  color: #fff;
+  font-size: 0.7em;
+  font-weight: 500;
+  margin: 15px;
+  padding: 0.2rem 0.6em 0.2em 0.6em;
+}
+
+.processing {
+  background-color: rgb(247, 247, 78);
+}
+
+.activating {
+  background-color: rgb(255, 77, 33);
+  color: #fff;
+}
+
+.ended {
+  background-color: rgba(0, 0, 0, 0.519);
+}
+
+.emp-promotion-content .object {
+  font-size: 0.75em;
+  color: red;
+  border: 1px solid red;
+  text-align: center;
+}
+
+.emp-promotion-content .date,
+.emp-promotion-content .discount {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.emp-promotion-used {
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.customer-rank-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.customer-rank-filter-button {
+  background-color: #343a40;
+  color: #fff;
+  outline: none;
+  min-width: 200px;
+}
+
+.customer-rank-filter-menu {
+  min-width: 200px;
+}
+
+.customer-rank-filter-button:hover {
+  color: #fff;
+}
+
+.new-emp-promotion-button {
+  border: 1px solid rgb(255, 77, 33);
+  color: rgb(255, 77, 33);
+  border-radius: 5px;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+.new-emp-promotion-button:hover {
+  color: rgb(255, 77, 33);
+  text-decoration: none;
+}

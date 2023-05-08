@@ -1,0 +1,101 @@
+.employee-popup-container {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgb(252, 252, 252);
+  padding: 1rem 3rem 1rem 3rem;
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.employee-popup-container > .employee-position-header {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.employee-popup-container > .employee-list-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.employee-list-container > .employee-item {
+  /* background-color: rgb(24, 185, 24); */
+  color: rgba(0, 0, 0, 0.526);
+  padding: 5px 0 5px 0;
+  border-radius: 5px;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.employee-list-container > .employee-item:hover {
+  /* background-color: rgba(21, 164, 21, 0.77); */
+  /* color: #fff; */
+  transform: translateY(-2px);
+}
+
+.employee-list-container > .employee-busy {
+  position: relative;
+  background-color: red;
+  color: #fff;
+}
+
+.employee-list-container > .employee-busy::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #343a4034;
+  cursor: not-allowed;
+}
+
+.employee-list-container > .employee-busy:hover {
+  transform: none;
+}
+
+.employee-popup-container > .employee-popup-button {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: end;
+}
+
+.employee-popup-button > .employee-button-cancel,
+.employee-popup-button > .employee-button-submit {
+  width: 100px;
+  text-align: center;
+  color: #fff;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.employee-popup-button > .employee-button-cancel {
+  background-color: #343a40;
+  margin-right: 0.5rem;
+}
+
+.employee-popup-button > .employee-button-cancel:hover {
+  background-color: #24292d;
+}
+
+.employee-popup-button > .employee-button-submit {
+  background-color: rgb(255, 77, 33);
+}
+
+.employee-popup-button > .employee-button-submit:hover {
+  background-color: rgb(237, 72, 31);
+}
